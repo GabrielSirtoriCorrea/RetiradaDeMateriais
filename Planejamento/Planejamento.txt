@@ -1,0 +1,133 @@
+Funções: Armazenar dados dos componentes disponíveis na sala
+	 Fazer empréstimo de componente disponível na sala
+	 Fazer devolução de componente disponível na sala
+	 Armazenar emprestimos em andamento
+	 Histórico de devoluções e empréstimos
+	 
+
+Interface: Linguagem: Java - JavaFX
+	   Plataforma: Raspberry Pi
+	   
+Janelas:
+
+Padrão para todas as janelas: Botão - Componentes
+	       			    - Abre janela ComponentesDisponiveis
+
+	 		      Botão - Empréstimo
+	       			    - Abre Janela NovoEmprestimo
+        
+	 		      Botão - Histórico
+	       			    - Abre janela Historico
+
+
+Inicial: Lista - Empréstimos em andamento
+	       - Nome, componente, descrição, dia e hora, status
+
+	 Caixa de texto - Inserir nome do componente/pessoa com status em andamento
+	 
+         Botão - Pesquisar
+               - Busca o nome do componente/pessoa no banco de dados e mostra na lista apenas os correspondentes
+	 
+	 Botão - Devolver
+	       - Muda o status dos empréstimos selecionaos na lista para devolvido
+	 
+	- Padrão para todas as janelas -
+
+
+Componentes: Lista - Componentes
+                   - Nome, quantidade disponível, quantidade em empréstimo, total
+	     
+	     Caixa de texto - Inserir nome componente
+	    
+             Botão - Pesquisar
+                   - Busca o nome do componente no banco de dados e mostra na lista apenas os correspondentes
+
+	     Botão - Cadastrar componente
+	           - Abre janela CadastroComponente 
+		
+	 	
+	     - Padrão para todas as janelas -
+
+CadastroComponente: Caixa de texto - Componente
+		    
+		    Caixa de texto - Quantidade 
+
+		    Botão - Cadastrar
+			  - Insere no banco de dados o componente e a quantidade, se o componente ja existir, soma as quantidades			
+	
+		    - Padrão para todas as janelas -
+
+NovoEmprestimo: Caixa de texto - Nome da pessoa
+		      
+		Caixa de texto - Descrição
+
+       		Caixa de texto - Pesquisar
+			       - Busca o nome do componente no banco de dados e mostra na lista apenas os correspondentes
+
+		Tabela - Componentes a serem emprestados
+		       - Componente, quantidadade
+
+		Lista - Componentes disponíveis
+		      - Componente, quantidade disponível
+
+		Label - Quantiade desse componente a ser adicionado
+		
+ 		Botões - Setas para cima e para baixo
+		       - Aumentam ou diminuem a quantidade desse componente a ser adicionado		
+
+		Botão - Adicionar componente
+		      - Adiciona o componente na tabela
+
+		Botão - Realizar Empréstimo
+		      - Adiciona o empréstimo a partir dos componentes selecionados na lista ao banco de dados
+
+		- Padrão para todas as janelas -
+
+Histórico: Caixa de texto - Pesquisar
+			  - Busca o nome do componente/pessoa no banco e mostra na lista os correspondentes
+	   
+	   Lista - Lista de todos os empréstimos e devoluções realizadas
+		 - Nome, componente, quantidade, dia e hora empréstimo, dia e hora devolução, status
+
+
+Banco de dados:
+
+Tabelas:
+
+Empréstimos:
+
+Colunas: ID - Inteiro - Identificação do empréstimo
+	 Nome - String - Nome da pessoa que fez o empréstimo
+	 Componente - String - Nome do componente a ser emprestado
+	 Quantidade - Inteiro - Quantidade do componente a ser emprestado
+         dataEmprestimo - DATA - Data da realização do empréstimo
+	 dataDevolução - DATA - Data da devolução
+	 Status - Booleano - Situação do empréstimo (Em andamento/Devolvido)
+
+Classes Java:
+
+*Uma classe pra cada janela* + Classe principal
+
+Componente.java: 
+
+Atributos: nome - String - Nome do componente
+	   qtdDisponivel - Inteiro - Quantidade disponível desse componente
+	   qtdEmprestimo - Inteiro - Quantidade emprestada desse componente
+
+Emprestimo.java:
+
+Atributos: id - Inteiro - Identificação do empréstimo
+	   nome - String - Nome da pessoa que fez o empréstimo
+	   componente - COMPONENTE - Nome do componente a ser emprestado
+	   qtdComponente - Inteiro - Quantidade desse componente a ser emprestado
+	   dataEmprestimo - DATA - Data da realização do empréstimo
+	   dataDevolução - DATA - Data da devolução
+	   status - Booleano - Situação do empréstimo (Em adamento/Devolvido)
+
+
+	   
+	    
+
+
+
+
