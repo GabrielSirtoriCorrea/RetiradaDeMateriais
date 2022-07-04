@@ -7,7 +7,9 @@ Funções: Armazenar dados dos componentes disponíveis na sala
 
 Interface: Linguagem: Java - JavaFX
 	   Plataforma: Raspberry Pi
-	   
+	
+=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-==-==-=-=-=-=-=-=-=-=-=-=-=
+   
 Janelas:
 
 Padrão para todas as janelas: Botão - Componentes
@@ -89,6 +91,7 @@ Histórico: Caixa de texto - Pesquisar
 	   Lista - Lista de todos os empréstimos e devoluções realizadas
 		 - Nome, componente, quantidade, dia e hora empréstimo, dia e hora devolução, status
 
+=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-==-==-=-=-=-=-=-=-=-=-=-=-=
 
 Banco de dados:
 
@@ -96,13 +99,20 @@ Tabelas:
 
 Empréstimos:
 
-Colunas: ID - Inteiro - Identificação do empréstimo
+Colunas: idEmprestimo - Inteiro - Identificação do empréstimo
 	 Nome - String - Nome da pessoa que fez o empréstimo
-	 Componente - String - Nome do componente a ser emprestado
+	 idComponente - Chave Estrangeira - inteiro - identificação do componente a ser emprestado
 	 Quantidade - Inteiro - Quantidade do componente a ser emprestado
          dataEmprestimo - DATA - Data da realização do empréstimo
 	 dataDevolução - DATA - Data da devolução
 	 Status - Booleano - Situação do empréstimo (Em andamento/Devolvido)
+
+Componentes: idComponente - Chave Primaria - Inteiro - identificação do componente
+	     componente - Chave Primaria - String - Nome do componente
+	     qtdDisponivel - Inteiro - Quantidade disponivel do componente
+	     qtdEmprestimo - Inteiro - Quantidade emprestada desse componente 		 
+
+=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-==-==-=-=-=-=-=-=-=-=-=-=-=
 
 Classes Java:
 
@@ -110,13 +120,17 @@ Classes Java:
 
 Componente.java: 
 
-Atributos: nome - String - Nome do componente
+Atributos: idComponente - Inteiro - identificação do componente
+	   componente - String - Nome do componente
 	   qtdDisponivel - Inteiro - Quantidade disponível desse componente
 	   qtdEmprestimo - Inteiro - Quantidade emprestada desse componente
 
+Métodos: Construtor - Cria um componente com os dados fornecidos do banco
+	 - getters e setters padrão -
+
 Emprestimo.java:
 
-Atributos: id - Inteiro - Identificação do empréstimo
+Atributos: idEmprestimo - Inteiro - Identificação do empréstimo
 	   nome - String - Nome da pessoa que fez o empréstimo
 	   componente - COMPONENTE - Nome do componente a ser emprestado
 	   qtdComponente - Inteiro - Quantidade desse componente a ser emprestado
@@ -124,8 +138,47 @@ Atributos: id - Inteiro - Identificação do empréstimo
 	   dataDevolução - DATA - Data da devolução
 	   status - Booleano - Situação do empréstimo (Em adamento/Devolvido)
 
+Métodos: Construtor - Cria um empréstimo com os dados fornecidos do banco
+	 - getters e setters padrão -
 
-	   
+
+SQLiteConnection.java:
+
+Atributos: databasePath - String - Caminho do banco de dados
+	   connection - Connection - Conecta com o banco
+	   statement - Statement - Cria e insere dados no banco
+	   prepareStatement - PrepareStatement - Prepara string para ler dados do banco
+	   resultSet - ResultSet - Dados retornados do banco 
+
+Métodos: Construtor - Connecta no banco e cria os statements necessários
+	 insertData(tabela, campos[array], valores[array]) - Insere dados na tabela
+	 updateData(tabela, campo, dado, referência) - Atualiza dados da tabela
+	 deleteData(tabela, referência) - Exclui dados da tabela
+	 selectData(tabela, campo, referência) - Seleciona dados da tabela
+	
+=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-==-==-=-=-=-=-=-=-=-=-=-=-=
+
+Estrutura do projeto
+
+Source - Manipulador de dados - sqlConnection.java 
+		       	      - sql.db
+	 	              - emprestimo.java
+		              - componentes.java
+
+       - TelaInicial - Controlador.java
+		      - layout.fxml
+
+       - Componentes - Controlador.java
+		      - layout.fxml
+
+       - CadastroComponente - Controlador.java
+		            - layout.fxml	
+
+       - NovoEmprestimo - Controlador.java
+		        - layout.fxml
+	
+       - Historico - Controlador.java
+		   - layout.fxml	
 	    
 
 
