@@ -12,84 +12,125 @@ Interface: Linguagem: Java - JavaFX
    
 Janelas:
 
-Padrão para todas as janelas: Botão - Componentes
-	       			    - Abre janela ComponentesDisponiveis
+Designs para janelas: Inicial, componentes, cadastro componente, novo emprestimo, historico.
 
-	 		      Botão - Empréstimo
-	       			    - Abre Janela NovoEmprestimo
+**Padrão para todas as janelas**: 
+
+- Botão 
+   - Componentes
+   - Abre janela ComponentesDisponiveis
+
+- Botão
+   - Empréstimo
+   - Abre Janela NovoEmprestimo
         
-	 		      Botão - Histórico
-	       			    - Abre janela Historico
+- Botão 
+   - Histórico
+   - Abre janela Historico
 
 
-Inicial: Lista - Empréstimos em andamento
-	       - Nome, componente, descrição, dia e hora, status
+Janela Inicial: 
 
-	 Caixa de texto - Inserir nome do componente/pessoa com status em andamento
+- Lista
+   - Empréstimos em andamento
+   - Nome, componente, descrição, dia e hora, status
+
+- Caixa de texto 
+   - Inserir nome do componente/pessoa com status em andamento
 	 
-         Botão - Pesquisar
-               - Busca o nome do componente/pessoa no banco de dados e mostra na lista apenas os correspondentes
+- Botão 
+   - Pesquisar
+   - Busca o nome do componente/pessoa no banco de dados e mostra na lista apenas os correspondentes
 	 
-	 Botão - Devolver
-	       - Muda o status dos empréstimos selecionaos na lista para devolvido
+- Botão 
+   - Devolver
+   - Muda o status dos empréstimos selecionaos na lista para devolvido
 	 
-	- Padrão para todas as janelas -
+**Padrão para todas as janelas**
 
 
-Componentes: Lista - Componentes
-                   - Nome, quantidade disponível, quantidade em empréstimo, total
+Janela Componentes: 
+
+- Lista 
+   - Componentes
+   - Nome, quantidade disponível, quantidade em empréstimo, total
 	     
-	     Caixa de texto - Inserir nome componente
+- Caixa de texto 
+   - Inserir nome componente
 	    
-             Botão - Pesquisar
-                   - Busca o nome do componente no banco de dados e mostra na lista apenas os correspondentes
+- Botão 
+   - Pesquisar
+   - Busca o nome do componente no banco de dados e mostra na lista apenas os correspondentes
 
-	     Botão - Cadastrar componente
-	           - Abre janela CadastroComponente 
-		
-	 	
-	     - Padrão para todas as janelas -
+- Botão 
+   - Cadastrar componente
+   - Abre janela CadastroComponente 
+			 	
+**Padrão para todas as janelas**
 
-CadastroComponente: Caixa de texto - Componente
+CadastroComponente: 
+
+- Caixa de texto 
+   - Componente
 		    
-		    Caixa de texto - Quantidade 
+- Caixa de texto 
+   - Quantidade 
 
-		    Botão - Cadastrar
-			  - Insere no banco de dados o componente e a quantidade, se o componente ja existir, soma as quantidades			
+- Botão 
+   - Cadastrar
+   - Insere no banco de dados o componente e a quantidade, se o componente ja existir, soma as quantidades			
 	
-		    - Padrão para todas as janelas -
+**Padrão para todas as janelas**
 
-NovoEmprestimo: Caixa de texto - Nome da pessoa
+NovoEmprestimo: 
+
+- Caixa de texto 
+   - Nome da pessoa
 		      
-		Caixa de texto - Descrição
+- Caixa de texto 
+   - Descrição
 
-       		Caixa de texto - Pesquisar
-			       - Busca o nome do componente no banco de dados e mostra na lista apenas os correspondentes
+- Caixa de texto 
+   - Pesquisar
+   - Busca o nome do componente no banco de dados e mostra na lista apenas os correspondentes
 
-		Tabela - Componentes a serem emprestados
-		       - Componente, quantidadade
+- Tabela 
+   - Componentes a serem emprestados
+   - Componente, quantidadade
 
-		Lista - Componentes disponíveis
-		      - Componente, quantidade disponível
+- Lista 
+   - Componentes disponíveis
+   - Componente, quantidade disponível
 
-		Label - Quantiade desse componente a ser adicionado
+- Label 
+   - Quantiade desse componente a ser adicionado
 		
- 		Botões - Setas para cima e para baixo
-		       - Aumentam ou diminuem a quantidade desse componente a ser adicionado		
+- Botões 
+   - Setas para cima e para baixo
+   - Aumentam ou diminuem a quantidade desse componente a ser adicionado		
 
-		Botão - Adicionar componente
-		      - Adiciona o componente na tabela
+- Botão 
+   - Adicionar componente
+   - Adiciona o componente na tabela
 
-		Botão - Realizar Empréstimo
-		      - Adiciona o empréstimo a partir dos componentes selecionados na lista ao banco de dados
+- Botão 
+   - Realizar Empréstimo
+   - Adiciona o empréstimo a partir dos componentes selecionados na lista ao banco de dados
 
-		- Padrão para todas as janelas -
+**Padrão para todas as janelas**
 
-Histórico: Caixa de texto - Pesquisar
-			  - Busca o nome do componente/pessoa no banco e mostra na lista os correspondentes
+Histórico: 
+
+- Caixa de texto 
+   - Pesquisar
+   - Busca o nome do componente/pessoa no banco e mostra na lista os correspondentes
 	   
-	   Lista - Lista de todos os empréstimos e devoluções realizadas
-		 - Nome, componente, quantidade, dia e hora empréstimo, dia e hora devolução, status
+- Lista 
+   - Lista de todos os empréstimos e devoluções realizadas
+   - Nome, componente, quantidade, dia e hora empréstimo, dia e hora devolução, status
+
+**Padrão para todas as janelas**
+
 
 =-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-==-==-=-=-=-=-=-=-=-=-=-=-=
 
@@ -160,26 +201,29 @@ Métodos: Construtor - Connecta no banco e cria os statements necessários
 
 Estrutura do projeto
 
-Source - Manipulador de dados - sqlConnection.java 
-		       	      - sql.db
-	 	              - emprestimo.java
-		              - componentes.java
 
-       - TelaInicial - Controlador.java
-		      - layout.fxml
+Source:
 
-       - Componentes - Controlador.java
-		      - layout.fxml
+- Model
+   - sqlConnection.java
+   - sql.db
+   - emprestimo.java
+   - componentes.java
 
-       - CadastroComponente - Controlador.java
-		            - layout.fxml	
+- Controller
+   - TelaInicialController.java
+   - ComponentesController.java
+   - CadastroComponentesController.java
+   - NovoEmprestimoController.java
+   - HistoricoController.java
 
-       - NovoEmprestimo - Controlador.java
-		        - layout.fxml
-	
-       - Historico - Controlador.java
-		   - layout.fxml	
-	    
+- View
+   - TelaInicial.fxml
+   - Componentes.fxml
+   - CadastroComponentes.fxml
+   - NovoEmprestimo.fxml
+   - Historico.fxml
+ 
 
 
 
