@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1280.0" prefWidth="720.0" style="-fx-background-color: #413EFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeScreenController">
+   <children>
+      <Button layoutX="9.0" layoutY="28.0" mnemonicParsing="false" onAction="#btnLoan" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #413EFF;">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Designs/Buttons/btnLoanDesign.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="244.0" layoutY="34.0" mnemonicParsing="false" onAction="#btnComponents" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #413EFF;">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Designs/Buttons/btnComponentsDesign.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="469.0" layoutY="35.0" mnemonicParsing="false" onAction="#btnHistory" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #413EFF;">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Designs/Buttons/btnHistoryDesign.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="39.0" layoutY="161.0" prefHeight="36.0" prefWidth="199.0">
+         <graphic>
+            <ImageView fitHeight="76.0" fitWidth="288.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Designs/Labels/lblLoanInLoadDesign.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Button layoutX="367.0" layoutY="232.0" mnemonicParsing="false" onAction="#btnSearch" style="-fx-background-color: #413EFF;">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Designs/Buttons/btnSearchDesign.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextField layoutX="46.0" layoutY="239.0" prefHeight="25.0" prefWidth="321.0" promptText="Search..." style="-fx-background-radius: 10; -fx-background-color: #D9D9D9;" />
+      <TableView fx:id="tblLoans" layoutX="40.0" layoutY="295.0" prefHeight="394.0" prefWidth="640.0">
+        <columns>
+          <TableColumn fx:id="tblColumnName" prefWidth="105.0" text="NOME" />
+          <TableColumn fx:id="tblColumnComponent" prefWidth="181.0" text="COMPONENTE" />
+            <TableColumn fx:id="tblColumnDay" prefWidth="75.0" text="DIA" />
+            <TableColumn fx:id="tblColumnTime" prefWidth="123.0" text="HORA" />
+            <TableColumn fx:id="tblColumnStatus" prefWidth="155.0" text="STATUS" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,16 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\gabri\\Documents\\Java Libs\\javafx-sdk-18.0.1\\lib\\javafx.base.jar",
+        "c:\\Users\\gabri\\Documents\\Java Libs\\javafx-sdk-18.0.1\\lib\\javafx.controls.jar",
+        "c:\\Users\\gabri\\Documents\\Java Libs\\javafx-sdk-18.0.1\\lib\\javafx.fxml.jar",
+        "c:\\Users\\gabri\\Documents\\Java Libs\\javafx-sdk-18.0.1\\lib\\javafx.graphics.jar",
+        "c:\\Users\\gabri\\Documents\\Java Libs\\javafx-sdk-18.0.1\\lib\\javafx.media.jar",
+        "c:\\Users\\gabri\\Documents\\Java Libs\\javafx-sdk-18.0.1\\lib\\javafx.swing.jar",
+        "c:\\Users\\gabri\\Documents\\Java Libs\\javafx-sdk-18.0.1\\lib\\javafx.web.jar",
+        "c:\\Users\\gabri\\Documents\\Java Libs\\javafx-sdk-18.0.1\\lib\\javafx-swt.jar",
+        "c:\\Users\\gabri\\Documents\\Java Libs\\sqlite-jdbc-3.20.0.jar"
+    ]
+}
