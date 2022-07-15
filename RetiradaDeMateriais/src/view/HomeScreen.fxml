@@ -48,5 +48,10 @@
             <Font name="Comic Sans MS" size="20.0" />
          </font>
       </Button>
+      <Button layoutX="518.0" layoutY="880.0" mnemonicParsing="false" onAction="#btnLoan" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="DEVOLVER" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS" size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
