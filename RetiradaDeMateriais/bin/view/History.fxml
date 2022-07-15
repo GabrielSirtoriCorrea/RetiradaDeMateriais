@@ -24,8 +24,8 @@
           <TableColumn fx:id="tblColumnComponent" prefWidth="84.0" text="NOME" />
             <TableColumn fx:id="tblColumnTime" minWidth="5.0" prefWidth="136.0" text="COMPONENTE" />
             <TableColumn fx:id="tblColumnStatus" prefWidth="112.0" text="QUANTIDADE" />
-            <TableColumn prefWidth="129.0" text="DATA EMPRÉSTIMO" />
-            <TableColumn prefWidth="129.0" text="DATA DEVOLUÇÃO" />
+            <TableColumn prefWidth="129.0" text="EMPRÉSTIMO" />
+            <TableColumn prefWidth="129.0" text="DEVOLUÇÃO" />
             <TableColumn prefWidth="62.0" text="STATUS" />
         </columns>
       </TableView>
