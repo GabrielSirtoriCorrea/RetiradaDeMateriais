@@ -16,9 +16,6 @@
             <Font name="Comic Sans MS Bold" size="24.0" />
          </font>
       </Button>
-      <Button layoutX="244.0" layoutY="34.0" mnemonicParsing="false" onAction="#btnComponents" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #413EFF;" />
-      <Button layoutX="469.0" layoutY="35.0" mnemonicParsing="false" onAction="#btnHistory" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #413EFF;" />
-      <Button layoutX="367.0" layoutY="232.0" mnemonicParsing="false" onAction="#btnSearch" style="-fx-background-color: #413EFF;" />
       <TextField layoutX="46.0" layoutY="239.0" prefHeight="25.0" prefWidth="321.0" promptText="Search..." style="-fx-background-radius: 10; -fx-background-color: #D9D9D9;" />
       <TableView fx:id="tblLoans" layoutX="40.0" layoutY="295.0" prefHeight="394.0" prefWidth="640.0">
         <columns>
