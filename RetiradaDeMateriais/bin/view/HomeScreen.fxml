@@ -12,7 +12,7 @@
    <children>
       <Button layoutX="40.0" layoutY="50.0" mnemonicParsing="false" onAction="#btnLoan" prefHeight="47.0" prefWidth="205.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="EMPRÉSTIMO" textAlignment="CENTER">
          <font>
-            <Font name="Comic Sans MS Bold" size="20.0" />
+            <Font name="Comic Sans MS" size="20.0" />
          </font>
       </Button>
       <TextField layoutX="46.0" layoutY="239.0" prefHeight="32.0" prefWidth="325.0" promptText="Search..." style="-fx-background-radius: 10; -fx-background-color: #D9D9D9;">
@@ -40,7 +40,7 @@
       </Button>
       <Label alignment="CENTER" layoutX="40.0" layoutY="172.0" prefHeight="40.0" prefWidth="315.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="EMPRÉSTIMOS EM ANDAMENTO" textAlignment="CENTER">
          <font>
-            <Font name="Comic Sans MS Bold" size="17.0" />
+            <Font name="Comic Sans MS" size="17.0" />
          </font>
       </Label>
       <Button layoutX="379.0" layoutY="235.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="68.0" style="-fx-background-color: #000000; -fx-background-radius: 20;" text="SEARCH" textFill="WHITE">
