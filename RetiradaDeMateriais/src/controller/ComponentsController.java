@@ -27,7 +27,7 @@ public class ComponentsController {
 
     @FXML
     void btnBack(ActionEvent event) {
-
+        App.changeScene(getClass().getResource("/view/HomeScreen.fxml"), (Stage) pane.getScene().getWindow());
     }
 
     @FXML
@@ -47,7 +47,7 @@ public class ComponentsController {
 
     @FXML
     void btnNewComponent(ActionEvent event) {
-
+        App.changeScene(getClass().getResource("/view/NewComponent.fxml"), (Stage) pane.getScene().getWindow());
     }
 
 }
