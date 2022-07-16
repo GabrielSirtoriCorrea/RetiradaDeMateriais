@@ -26,7 +26,7 @@
             <TableColumn fx:id="tblColumnStatus" prefWidth="140.0" text="EMPRESTADO" />
         </columns>
       </TableView>
-      <Button layoutX="258.0" layoutY="50.0" mnemonicParsing="false" onAction="#btnLoan" prefHeight="47.0" prefWidth="205.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="COMPONENTES" textAlignment="CENTER">
+      <Button layoutX="258.0" layoutY="50.0" mnemonicParsing="false" onAction="#btnComponents" prefHeight="47.0" prefWidth="205.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="COMPONENTES" textAlignment="CENTER">
          <font>
             <Font name="Comic Sans MS" size="20.0" />
          </font>
@@ -41,12 +41,12 @@
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="538.0" layoutY="877.0" mnemonicParsing="false" onAction="#btnLoan" prefHeight="63.0" prefWidth="155.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="NOVO&#10;COMPONENTE" textAlignment="CENTER">
+      <Button layoutX="538.0" layoutY="877.0" mnemonicParsing="false" onAction="#btnNewComponent" prefHeight="63.0" prefWidth="155.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="NOVO&#10;COMPONENTE" textAlignment="CENTER">
          <font>
             <Font name="Comic Sans MS" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="475.0" layoutY="50.0" mnemonicParsing="false" onAction="#btnLoan" prefHeight="47.0" prefWidth="205.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="HISTÓRICO" textAlignment="CENTER">
+      <Button layoutX="475.0" layoutY="50.0" mnemonicParsing="false" onAction="#btnHistory" prefHeight="47.0" prefWidth="205.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="HISTÓRICO" textAlignment="CENTER">
          <font>
             <Font name="Comic Sans MS" size="20.0" />
          </font>

@@ -39,12 +39,12 @@ public class HomeScreenController {
 
     @FXML
     void btnComponents(ActionEvent event) {
-
+        App.changeScene(getClass().getResource("/view/Components.fxml"), (Stage) pane.getScene().getWindow());
     }
 
     @FXML
     void btnHistory(ActionEvent event) {
-
+        App.changeScene(getClass().getResource("/view/History.fxml"), (Stage) pane.getScene().getWindow());
     }
 
     @FXML

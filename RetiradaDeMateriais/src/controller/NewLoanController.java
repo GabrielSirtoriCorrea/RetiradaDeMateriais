@@ -32,14 +32,24 @@ public class NewLoanController {
     private TableView<?> tblLoans1;
 
     @FXML
-    void btnLoan(ActionEvent event) {
+    void btnBack(ActionEvent event) {
+        App.changeScene(getClass().getResource("/view/HomeScreen.fxml"), (Stage) pane.getScene().getWindow());
 
     }
 
     @FXML
-    void btnBack(ActionEvent event) {
-        App.changeScene(getClass().getResource("/view/HomeScreen.fxml"), (Stage) pane.getScene().getWindow());
+    void btnComponents(ActionEvent event) {
+        App.changeScene(getClass().getResource("/view/Components.fxml"), (Stage) pane.getScene().getWindow());
+    }
 
+    @FXML
+    void btnHistory(ActionEvent event) {
+        App.changeScene(getClass().getResource("/view/History.fxml"), (Stage) pane.getScene().getWindow());
+    }
+
+    @FXML
+    void btnLoan(ActionEvent event) {
+        App.changeScene(getClass().getResource("/view/NewLoan.fxml"), (Stage) pane.getScene().getWindow());
     }
 
 }
