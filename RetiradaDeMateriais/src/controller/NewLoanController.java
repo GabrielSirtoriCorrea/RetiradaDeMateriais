@@ -4,8 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import model.App;
 
 public class NewLoanController {
+
+    @FXML
+    private AnchorPane pane;
 
     @FXML
     private TableColumn<?, ?> tblColumnStatus;
@@ -27,6 +33,12 @@ public class NewLoanController {
 
     @FXML
     void btnLoan(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnBack(ActionEvent event) {
+        App.changeScene(getClass().getResource("/view/HomeScreen.fxml"), (Stage) pane.getScene().getWindow());
 
     }
 
