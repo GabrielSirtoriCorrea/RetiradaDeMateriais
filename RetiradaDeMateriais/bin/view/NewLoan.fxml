@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1280.0" prefWidth="720.0" style="-fx-background-color: #413EFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewLoanController">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1280.0" prefWidth="720.0" style="-fx-background-color: #413EFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewLoanController">
    <children>
       <Button layoutX="40.0" layoutY="50.0" mnemonicParsing="false" onAction="#btnLoan" prefHeight="47.0" prefWidth="205.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="EMPRÉSTIMO" textAlignment="CENTER">
          <font>
@@ -89,6 +89,11 @@
       <Button layoutX="536.0" layoutY="897.0" mnemonicParsing="false" onAction="#btnLoan" prefHeight="57.0" prefWidth="148.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="REALIZAR &#10;EMPRÉSTIMO" textAlignment="CENTER">
          <font>
             <Font name="Comic Sans MS" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="34.0" layoutY="897.0" mnemonicParsing="false" onAction="#btnBack" prefHeight="32.0" prefWidth="128.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="VOLTAR" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS" size="20.0" />
          </font>
       </Button>
    </children>
