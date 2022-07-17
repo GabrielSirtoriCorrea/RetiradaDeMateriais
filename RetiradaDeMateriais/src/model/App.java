@@ -21,17 +21,11 @@ public class App extends Application{
 
         changeScene(getClass().getResource("/view/HomeScreen.fxml"), primaryStage);
 
-        /*FXMLLoader fxmlfile = new FXMLLoader(getClass().getResource("/view/HomeScreen.fxml"));
-        Parent root = fxmlfile.load();
-        Scene scene = new Scene(root);
-
-        primaryStage.setScene(scene);
-        primaryStage.show();*/
+        SQLConnection sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+        System.out.println("CONECTADO");
+        sqlConnection.close();
+        System.out.println("DESCONECTADO");
         
-    }
-
-    public Stage getStage(){
-        return primaryStage;
     }
 
     public static void changeScene(URL path, Stage stage){
