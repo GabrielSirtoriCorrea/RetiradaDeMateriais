@@ -67,22 +67,6 @@ public class SQLConnection {
         }
     }
 
-    public void insertComponent(String component, int qtdAvailable, int qtdUnavailable){
-        try {
-            this.preparedStatement = this.connection.prepareStatement("INSERT INTO Components (component, qtdAvailable, qtdUnavailable) VALUES (?,?,?);");
-            this.preparedStatement.setString(1, component);
-            this.preparedStatement.setInt(2, qtdAvailable);
-            this.preparedStatement.setInt(3, qtdUnavailable);
-
-            this.preparedStatement.executeUpdate();
-                
-            
-        } catch (SQLException e) {
-            System.out.println("Falha ao inserir dados na tabela");
-            e.printStackTrace();
-        }
-    }
-
     public ResultSet getLoan(){
         try {
             resultSet = statement.executeQuery("SELECT * FROM Loan"); 
@@ -107,6 +91,111 @@ public class SQLConnection {
         }
     }
 
+    public ResultSet getLoan(String key, int value){
+        try {
+            this.preparedStatement = connection.prepareStatement("SELECT * FROM Loan WHERE " + key + " = ?");
+            this.preparedStatement.setInt(1, value);
+            this.resultSet = this.preparedStatement.executeQuery();
+            return this.resultSet;
+        } catch (SQLException e) {
+            System.out.println("Falha ao selecionar dados a partir de chave da tabela loan");
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
+    public void updateLoan(String key, String keyValue, String field, String fieldValue){
+        try {
+            this.preparedStatement = connection.prepareStatement("UPDATE Loan SET " + field + " = ? WHERE " + key + " = ?");
+            this.preparedStatement.setString(1, fieldValue);
+            this.preparedStatement.setString(2, keyValue);
+            this.preparedStatement.executeUpdate();
+            
+        } catch (SQLException e) {
+            System.out.println("Falha ao atualizar dados a partir de chave da tabela loan");
+            e.printStackTrace();
+        }
+    }
+
+    public void updateLoan(String key, int keyValue, String field, String fieldValue){
+        try {
+            this.preparedStatement = connection.prepareStatement("UPDATE Loan SET " + field + " = ? WHERE " + key + " = ?");
+            this.preparedStatement.setString(1, fieldValue);
+            this.preparedStatement.setInt(2, keyValue);
+            this.preparedStatement.executeUpdate();
+            
+        } catch (SQLException e) {
+            System.out.println("Falha ao atualizar dados a partir de chave da tabela loan");
+            e.printStackTrace();
+        }
+    }
+
+    public void updateLoan(String key, String keyValue, String field, int fieldValue){
+        try {
+            this.preparedStatement = connection.prepareStatement("UPDATE Loan SET " + field + " = ? WHERE " + key + " = ?");
+            this.preparedStatement.setInt(1, fieldValue);
+            this.preparedStatement.setString(2, keyValue);
+            this.preparedStatement.executeUpdate();
+            
+        } catch (SQLException e) {
+            System.out.println("Falha ao atualizar dados a partir de chave da tabela loan");
+            e.printStackTrace();
+        }
+    }
+
+    public void updateLoan(String key, int keyValue, String field, int fieldValue){
+        try {
+            this.preparedStatement = connection.prepareStatement("UPDATE Loan SET " + field + " = ? WHERE " + key + " = ?");
+            this.preparedStatement.setInt(1, fieldValue);
+            this.preparedStatement.setInt(2, keyValue);
+            this.preparedStatement.executeUpdate();
+            
+        } catch (SQLException e) {
+            System.out.println("Falha ao atualizar dados a partir de chave da tabela loan");
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteLoan(String key, String value){
+        try {
+            this.preparedStatement = connection.prepareStatement("DELETE FROM Loan WHERE " + key + " = ?");
+            this.preparedStatement.setString(1, value);
+            this.preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Falha ao deletar dados a partir de chave da tabela loan");
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteLoan(String key, int value){
+        try {
+            this.preparedStatement = connection.prepareStatement("DELETE FROM Loan WHERE " + key + " = ?");
+            this.preparedStatement.setInt(1, value);
+            this.preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Falha ao deletar dados a partir de chave da tabela loan");
+            e.printStackTrace();
+        }
+    }
+
+
+    public void insertComponent(String component, int qtdAvailable, int qtdUnavailable){
+        try {
+            this.preparedStatement = this.connection.prepareStatement("INSERT INTO Components (component, qtdAvailable, qtdUnavailable) VALUES (?,?,?);");
+            this.preparedStatement.setString(1, component);
+            this.preparedStatement.setInt(2, qtdAvailable);
+            this.preparedStatement.setInt(3, qtdUnavailable);
+
+            this.preparedStatement.executeUpdate();
+                
+            
+        } catch (SQLException e) {
+            System.out.println("Falha ao inserir dados na tabela");
+            e.printStackTrace();
+        }
+    }    
+
     public ResultSet getComponent(){
         try {
             this.resultSet = statement.executeQuery("SELECT * FROM Components"); 
@@ -128,6 +217,93 @@ public class SQLConnection {
             System.out.println("Falha ao selecionar dados a partir de chave da tabela Components");
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public ResultSet getComponent(String key, int value){
+        try {
+            this.preparedStatement = connection.prepareStatement("SELECT * FROM Components WHERE " + key + " = ?");
+            this.preparedStatement.setInt(1, value);
+            this.resultSet = this.preparedStatement.executeQuery();
+            return this.resultSet;
+        } catch (SQLException e) {
+            System.out.println("Falha ao selecionar dados a partir de chave da tabela Components");
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public void updateComponent(String key, String keyValue, String field, String fieldValue){
+        try {
+            this.preparedStatement = connection.prepareStatement("UPDATE Components SET " + field + " = ? WHERE " + key + " = ?");
+            this.preparedStatement.setString(1, fieldValue);
+            this.preparedStatement.setString(2, keyValue);
+            this.preparedStatement.executeUpdate();
+            
+        } catch (SQLException e) {
+            System.out.println("Falha ao atualizar dados a partir de chave da tabela Components");
+            e.printStackTrace();
+        }
+    }
+
+    public void updateComponent(String key, int keyValue, String field, String fieldValue){
+        try {
+            this.preparedStatement = connection.prepareStatement("UPDATE Components SET " + field + " = ? WHERE " + key + " = ?");
+            this.preparedStatement.setString(1, fieldValue);
+            this.preparedStatement.setInt(2, keyValue);
+            this.preparedStatement.executeUpdate();
+            
+        } catch (SQLException e) {
+            System.out.println("Falha ao atualizar dados a partir de chave da tabela Components");
+            e.printStackTrace();
+        }
+    }
+
+    public void updateComponent(String key, String keyValue, String field, int fieldValue){
+        try {
+            this.preparedStatement = connection.prepareStatement("UPDATE Components SET " + field + " = ? WHERE " + key + " = ?");
+            this.preparedStatement.setInt(1, fieldValue);
+            this.preparedStatement.setString(2, keyValue);
+            this.preparedStatement.executeUpdate();
+            
+        } catch (SQLException e) {
+            System.out.println("Falha ao atualizar dados a partir de chave da tabela Components");
+            e.printStackTrace();
+        }
+    }
+
+    public void updateComponent(String key, int keyValue, String field, int fieldValue){
+        try {
+            this.preparedStatement = connection.prepareStatement("UPDATE Components SET " + field + " = ? WHERE " + key + " = ?");
+            this.preparedStatement.setInt(1, fieldValue);
+            this.preparedStatement.setInt(2, keyValue);
+            this.preparedStatement.executeUpdate();
+            
+        } catch (SQLException e) {
+            System.out.println("Falha ao atualizar dados a partir de chave da tabela Components");
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteComponent(String key, String value){
+        try {
+            this.preparedStatement = connection.prepareStatement("DELETE FROM Components WHERE " + key + " = ?");
+            this.preparedStatement.setString(1, value);
+            this.preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Falha ao selecionar dados a partir de chave da tabela Components");
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteComponent(String key, int value){
+        try {
+            this.preparedStatement = connection.prepareStatement("DELETE FROM Components WHERE " + key + " = ?");
+            this.preparedStatement.setInt(1, value);
+            this.preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Falha ao selecionar dados a partir de chave da tabela Components");
+            e.printStackTrace();
         }
     }
 

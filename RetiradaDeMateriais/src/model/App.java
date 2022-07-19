@@ -24,20 +24,28 @@ public class App extends Application{
 
         changeScene(getClass().getResource("/view/HomeScreen.fxml"), primaryStage);
 
-        SQLConnection sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
-        System.out.println("CONECTADO");
-        //sqlConnection.insertLoan("Wellington", 12, 10, new Date(new java.util.Date().getTime()), true);
-        sqlConnection.insertComponent("Arduino", 12, 10);
-        System.out.println("DADOS INSERIDOS");
-
-        ResultSet result = sqlConnection.getComponent("component", "Arduino");
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-        /*while(result.next()){
+        SQLConnection sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+        System.out.println("CONECTADO");
+        sqlConnection.insertLoan("Gazebo", 1, 10, new Date(new java.util.Date().getTime()), true);
+        sqlConnection.insertComponent("Arduino", 10, 10);
+        sqlConnection.insertLoan("Carlao", 1, 10, new Date(new java.util.Date().getTime()), true);
+        sqlConnection.insertComponent("Esp", 10, 10);
+        System.out.println("DADOS INSERIDOS");
+
+        ResultSet result = sqlConnection.getLoan();
+
+        while(result.next()){
             System.out.println("loanId: " + result.getInt("Id"));
             System.out.println("name: " + result.getString("name"));
+            System.out.println("ComponentId: " + result.getInt("componentId"));
             System.out.println("Data: " + dateFormat.format(result.getDate("loanDate")));
-        }*/
+        }
+
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-==-==-=-==-=-=--=-=--=-=");
+
+        result = sqlConnection.getComponent();
 
         while(result.next()){
             System.out.println("ComponentId: " + result.getInt("Id"));
@@ -46,6 +54,61 @@ public class App extends Application{
             System.out.println("Unavailable: " + result.getInt("qtdUnavailable"));
         }
 
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-==-==-=-==-=-=--=-=--=-=");
+
+        sqlConnection.updateLoan("Id", 1, "name", "Felipeido");
+        sqlConnection.updateComponent("Id", 1, "component", "Raspberry");
+
+        System.out.println("DADOS ATUALIZADOS");
+
+        result = sqlConnection.getLoan();
+
+        while(result.next()){
+            System.out.println("loanId: " + result.getInt("Id"));
+            System.out.println("name: " + result.getString("name"));
+            System.out.println("ComponentId: " + result.getInt("componentId"));
+            System.out.println("Data: " + dateFormat.format(result.getDate("loanDate")));
+        }
+
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-==-==-=-==-=-=--=-=--=-=");
+
+        result = sqlConnection.getComponent();
+
+        while(result.next()){
+            System.out.println("ComponentId: " + result.getInt("Id"));
+            System.out.println("Component: " + result.getString("component"));
+            System.out.println("Available: " + result.getInt("qtdAvailable"));
+            System.out.println("Unavailable: " + result.getInt("qtdUnavailable"));
+        }
+
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-==-==-=-==-=-=--=-=--=-=");
+
+        sqlConnection.deleteLoan("name", "Carlao");
+        sqlConnection.deleteComponent("component", "Esp");
+
+        System.out.println("DADOS DELETADOS");
+
+        result = sqlConnection.getLoan();
+
+        while(result.next()){
+            System.out.println("loanId: " + result.getInt("Id"));
+            System.out.println("name: " + result.getString("name"));
+            System.out.println("ComponentId: " + result.getInt("componentId"));
+            System.out.println("Data: " + dateFormat.format(result.getDate("loanDate")));
+        }
+
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-==-==-=-==-=-=--=-=--=-=");
+
+        result = sqlConnection.getComponent();
+
+        while(result.next()){
+            System.out.println("ComponentId: " + result.getInt("Id"));
+            System.out.println("Component: " + result.getString("component"));
+            System.out.println("Available: " + result.getInt("qtdAvailable"));
+            System.out.println("Unavailable: " + result.getInt("qtdUnavailable"));
+        }
+
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-==-==-=-==-=-=--=-=--=-=");
 
         sqlConnection.close();
         System.out.println("DESCONECTADO");
