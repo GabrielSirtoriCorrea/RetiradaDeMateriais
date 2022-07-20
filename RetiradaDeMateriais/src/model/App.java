@@ -28,10 +28,10 @@ public class App extends Application{
 
         SQLConnection sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
         System.out.println("CONECTADO");
-        sqlConnection.insertLoan("Gazebo", 1, 10, new Date(new java.util.Date().getTime()), true);
-        sqlConnection.insertComponent("Arduino", 10, 10);
-        sqlConnection.insertLoan("Carlao", 1, 10, new Date(new java.util.Date().getTime()), true);
-        sqlConnection.insertComponent("Esp", 10, 10);
+        //sqlConnection.insertLoan("Gazebo", 1, 10, new Date(new java.util.Date().getTime()), true);
+        //sqlConnection.insertComponent("Arduino", 10, 10);
+        //sqlConnection.insertLoan("Carlao", 1, 10, new Date(new java.util.Date().getTime()), true);
+        //sqlConnection.insertComponent("Esp", 10, 10);
         System.out.println("DADOS INSERIDOS");
 
         ResultSet result = sqlConnection.getLoan();
@@ -56,12 +56,12 @@ public class App extends Application{
 
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-==-==-=-==-=-=--=-=--=-=");
 
-        sqlConnection.updateLoan("Id", 1, "name", "Felipeido");
-        sqlConnection.updateComponent("Id", 1, "component", "Raspberry");
+        //sqlConnection.updateLoan("Id", 2, "status", false);
+        //sqlConnection.updateComponent("Id", 1, "component", "Raspberry");
 
         System.out.println("DADOS ATUALIZADOS");
 
-        result = sqlConnection.getLoan();
+        /*result = sqlConnection.getLoan();
 
         while(result.next()){
             System.out.println("loanId: " + result.getInt("Id"));
@@ -108,7 +108,7 @@ public class App extends Application{
             System.out.println("Unavailable: " + result.getInt("qtdUnavailable"));
         }
 
-        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-==-==-=-==-=-=--=-=--=-=");
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-==-==-=-==-=-=--=-=--=-=");*/
 
         sqlConnection.close();
         System.out.println("DESCONECTADO");
