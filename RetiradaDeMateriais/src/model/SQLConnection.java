@@ -104,6 +104,19 @@ public class SQLConnection {
         }
     }
 
+    public ResultSet getLoan(String key, boolean value){
+        try {
+            this.preparedStatement = connection.prepareStatement("SELECT * FROM Loan WHERE " + key + " = ?");
+            this.preparedStatement.setBoolean(1, value);
+            this.resultSet = this.preparedStatement.executeQuery();
+            return this.resultSet;
+        } catch (SQLException e) {
+            System.out.println("Falha ao selecionar dados a partir de chave da tabela loan");
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 
     public void updateLoan(String key, String keyValue, String field, String fieldValue){
         try {
@@ -148,6 +161,19 @@ public class SQLConnection {
         try {
             this.preparedStatement = connection.prepareStatement("UPDATE Loan SET " + field + " = ? WHERE " + key + " = ?");
             this.preparedStatement.setInt(1, fieldValue);
+            this.preparedStatement.setInt(2, keyValue);
+            this.preparedStatement.executeUpdate();
+            
+        } catch (SQLException e) {
+            System.out.println("Falha ao atualizar dados a partir de chave da tabela loan");
+            e.printStackTrace();
+        }
+    }
+
+    public void updateLoan(String key, int keyValue, String field, boolean fieldValue){
+        try {
+            this.preparedStatement = connection.prepareStatement("UPDATE Loan SET " + field + " = ? WHERE " + key + " = ?");
+            this.preparedStatement.setBoolean(1, fieldValue);
             this.preparedStatement.setInt(2, keyValue);
             this.preparedStatement.executeUpdate();
             
