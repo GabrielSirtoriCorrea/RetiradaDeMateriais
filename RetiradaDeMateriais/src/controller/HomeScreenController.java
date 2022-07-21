@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -17,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -47,9 +49,11 @@ public class HomeScreenController implements Initializable{
     @FXML
     private TableView<Loan> tblLoans;
 
-    private ResultSet result;
+    @FXML
+    private TextField txtSearch;
+
     private SQLConnection sqlConnection;
-    private ResultSet resultLoans;
+    private ResultSet resultLoans, resultComponents;
     private Loan loan;
     private List<Loan> listLoans = new ArrayList<>();
     private ObservableList<Loan> obsLoans;
@@ -71,7 +75,46 @@ public class HomeScreenController implements Initializable{
     }
 
     @FXML
+    void btnDevolution(ActionEvent event) {
+
+    }
+
+    @FXML
     void btnSearch(ActionEvent event) {
+        sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+        
+        resultLoans = sqlConnection.getLoan("status", true);
+        listLoans.clear();
+        
+        try{
+            while(resultLoans.next()){
+
+                resultComponents = sqlConnection.getComponent("Id", resultLoans.getInt("componentId"));
+
+                if(resultLoans.getString("name").toLowerCase().startsWith(txtSearch.getText().toLowerCase())||
+                    resultComponents.getString("component").toLowerCase().startsWith(txtSearch.getText().toLowerCase())){
+                    
+                    loan = new Loan(resultLoans.getInt("Id"),
+                    resultLoans.getString("name"),
+                    resultLoans.getInt("componentId"),
+                    resultLoans.getInt("quantity"),
+                    resultLoans.getDate("loanDate"),
+                    resultLoans.getDate("devolutionDate"),
+                    resultLoans.getBoolean("status"));
+    
+                    listLoans.add(loan);
+                }
+            }
+
+        obsLoans = FXCollections.observableArrayList(listLoans);
+        tblLoans.setItems(obsLoans);
+
+        sqlConnection.close();
+
+        }catch(SQLException e){
+            System.out.println("Erro ao pesquisar");
+            e.printStackTrace();
+        }
 
     }
 
@@ -87,7 +130,7 @@ public class HomeScreenController implements Initializable{
             
             sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
 
-            resultLoans = sqlConnection.getLoan("Id", true);
+            resultLoans = sqlConnection.getLoan("status", true);
 
             while(resultLoans.next()){
                 loan = new Loan(resultLoans.getInt("Id"),
