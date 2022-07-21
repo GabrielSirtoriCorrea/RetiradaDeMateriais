@@ -28,7 +28,7 @@ public class App extends Application{
 
         SQLConnection sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
         System.out.println("CONECTADO");
-        //sqlConnection.insertLoan("Gazebo", 1, 10, new Date(new java.util.Date().getTime()), true);
+        //sqlConnection.insertLoan("Arnaldo", 2, 10, new Date(new java.util.Date().getTime()), true);
         //sqlConnection.insertComponent("Arduino", 10, 10);
         //sqlConnection.insertLoan("Carlao", 1, 10, new Date(new java.util.Date().getTime()), true);
         //sqlConnection.insertComponent("Esp", 10, 10);

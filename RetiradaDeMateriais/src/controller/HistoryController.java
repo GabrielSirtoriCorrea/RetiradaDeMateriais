@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -48,9 +49,13 @@ public class HistoryController implements Initializable{
     @FXML
     private TableView<Loan> tblHistory;
 
+    @FXML
+    private TextField txtSearch;
+
+
     private List<Loan> listLoans = new ArrayList<>();
     private SQLConnection sqlConnection;
-    private ResultSet resultLoans;
+    private ResultSet resultLoans, resultComponents;
     private Loan loan;
     private ObservableList<Loan> obsLoans;
 
@@ -73,6 +78,44 @@ public class HistoryController implements Initializable{
     @FXML
     void btnLoan(ActionEvent event) {
         App.changeScene(getClass().getResource("/view/NewLoan.fxml"), (Stage) pane.getScene().getWindow());
+    }
+
+    @FXML
+    void btnSearch(ActionEvent event) {
+        sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+        
+        resultLoans = sqlConnection.getLoan();
+        listLoans.clear();
+        
+        try{
+            while(resultLoans.next()){
+
+                resultComponents = sqlConnection.getComponent("Id", resultLoans.getInt("componentId"));
+
+                if(resultLoans.getString("name").toLowerCase().startsWith(txtSearch.getText().toLowerCase())||
+                    resultComponents.getString("component").toLowerCase().startsWith(txtSearch.getText().toLowerCase())){
+                    
+                    loan = new Loan(resultLoans.getInt("Id"),
+                    resultLoans.getString("name"),
+                    resultLoans.getInt("componentId"),
+                    resultLoans.getInt("quantity"),
+                    resultLoans.getDate("loanDate"),
+                    resultLoans.getDate("devolutionDate"),
+                    resultLoans.getBoolean("status"));
+    
+                    listLoans.add(loan);
+                }
+            }
+
+        obsLoans = FXCollections.observableArrayList(listLoans);
+        tblHistory.setItems(obsLoans);
+
+        sqlConnection.close();
+
+        }catch(SQLException e){
+            System.out.println("Erro ao pesquisar");
+            e.printStackTrace();
+        }
     }
 
     @Override
