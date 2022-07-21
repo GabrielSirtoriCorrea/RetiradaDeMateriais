@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.App;
@@ -57,7 +59,7 @@ public class HomeScreenController implements Initializable{
     private Loan loan;
     private List<Loan> listLoans = new ArrayList<>();
     private ObservableList<Loan> obsLoans;
-
+    private int selectedItem;
 
     @FXML
     void btnComponents(ActionEvent event) {
@@ -75,8 +77,20 @@ public class HomeScreenController implements Initializable{
     }
 
     @FXML
-    void btnDevolution(ActionEvent event) {
+    void tblClick(MouseEvent event) {
+        selectedItem = tblLoans.getSelectionModel().getSelectedIndex();
+    }
 
+    @FXML
+    void btnDevolution(ActionEvent event) {
+        loan = tblLoans.getItems().get(selectedItem);
+
+        sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+
+        sqlConnection.updateLoan("Id", loan.getid(), "status", false);
+        sqlConnection.updateLoan("Id", loan.getid(), "devolutionDate", new Date(new java.util.Date().getTime()));
+        sqlConnection.close();
+        btnSearch(event);
     }
 
     @FXML
