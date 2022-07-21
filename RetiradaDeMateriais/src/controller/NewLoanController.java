@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -44,6 +45,9 @@ public class NewLoanController implements Initializable{
     @FXML
     private TableView<Component> tblLoanComponents;
 
+    @FXML
+    private TextField txtSearch;
+
     private List<Component> listComponents = new ArrayList<>();
     private SQLConnection sqlConnection;
     private ResultSet result;
@@ -69,6 +73,31 @@ public class NewLoanController implements Initializable{
     @FXML
     void btnLoan(ActionEvent event) {
         App.changeScene(getClass().getResource("/view/NewLoan.fxml"), (Stage) pane.getScene().getWindow());
+    }
+
+    @FXML
+    void btnSearch(ActionEvent event) {
+        sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+        
+        result = sqlConnection.getComponent();
+        listComponents.clear();
+        try{
+            while(result.next()){
+                if(result.getString("component").toLowerCase().startsWith(txtSearch.getText().toLowerCase())){
+                    listComponents.add(new Component(result.getInt("id"), result.getString("component"),result.getInt("qtdAvailable"), result.getInt("qtdUnavailable")));
+
+                }
+            }
+
+        obsComponents = FXCollections.observableArrayList(listComponents);
+        tblAvailableComponents.setItems(obsComponents);
+
+        sqlConnection.close();
+
+        }catch(SQLException e){
+            System.out.println("Erro ao pesquisar");
+            e.printStackTrace();
+        }
     }
 
     @Override

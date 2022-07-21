@@ -61,12 +61,12 @@
             <TableColumn fx:id="tblColumnAvailableQtd" prefWidth="146.0" style="-fx-alignment: center;" text="QUANTIDADE" />
          </columns>
       </TableView>
-      <Button layoutX="304.0" layoutY="563.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="95.0" style="-fx-background-color: #000000; -fx-background-radius: 20;" text="SEARCH" textFill="WHITE">
+      <Button layoutX="304.0" layoutY="563.0" mnemonicParsing="false" onAction="#btnSearch" prefHeight="40.0" prefWidth="95.0" style="-fx-background-color: #000000; -fx-background-radius: 20;" text="SEARCH" textFill="WHITE">
          <font>
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font>
       </Button>
-      <TextField layoutX="40.0" layoutY="567.0" prefHeight="32.0" prefWidth="255.0" promptText="Search..." style="-fx-background-radius: 10; -fx-background-color: #D9D9D9;">
+      <TextField fx:id="txtSearch" layoutX="40.0" layoutY="567.0" prefHeight="32.0" prefWidth="255.0" promptText="Search..." style="-fx-background-radius: 10; -fx-background-color: #D9D9D9;">
          <font>
             <Font name="Comic Sans MS" size="12.0" />
          </font>
