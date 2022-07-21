@@ -183,6 +183,19 @@ public class SQLConnection {
         }
     }
 
+    public void updateLoan(String key, int keyValue, String field, Date fieldValue){
+        try {
+            this.preparedStatement = connection.prepareStatement("UPDATE Loan SET " + field + " = ? WHERE " + key + " = ?");
+            this.preparedStatement.setDate(1, fieldValue);
+            this.preparedStatement.setInt(2, keyValue);
+            this.preparedStatement.executeUpdate();
+            
+        } catch (SQLException e) {
+            System.out.println("Falha ao atualizar dados a partir de chave da tabela loan");
+            e.printStackTrace();
+        }
+    }
+
     public void deleteLoan(String key, String value){
         try {
             this.preparedStatement = connection.prepareStatement("DELETE FROM Loan WHERE " + key + " = ?");
