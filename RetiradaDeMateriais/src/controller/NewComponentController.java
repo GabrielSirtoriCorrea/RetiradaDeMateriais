@@ -2,6 +2,7 @@ package controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -20,12 +21,25 @@ public class NewComponentController {
     private TextField txtQtd;
 
     SQLConnection sqlConnection;
+    Alert alert;
 
     @FXML
     void btnAddComponent(ActionEvent event) {
-        sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+        if(!txtComponent.getText().equals("") && !txtQtd.getText().equals("")){
+            sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
 
-        sqlConnection.insertComponent(txtComponent.getText(), Integer.parseInt(txtQtd.getText()), 0);
+            sqlConnection.insertComponent(txtComponent.getText(), Integer.parseInt(txtQtd.getText()), 0);
+            
+            sqlConnection.close();
+            App.changeScene(getClass().getResource("/view/Components.fxml"), (Stage) pane.getScene().getWindow());
+        
+        }else{
+            alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("AVISO!");
+            alert.setHeaderText("AVISO!");
+            alert.setContentText("Preencha todos os campos!");
+            alert.showAndWait();
+        }
     }
 
     @FXML
