@@ -1,6 +1,5 @@
 package controller;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.ResultSet;
@@ -13,10 +12,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -59,7 +55,7 @@ public class HomeScreenController implements Initializable{
     private Loan loan;
     private List<Loan> listLoans = new ArrayList<>();
     private ObservableList<Loan> obsLoans;
-    private int selectedItem;
+    private int selectedItem = -1;
 
     @FXML
     void btnComponents(ActionEvent event) {
@@ -79,18 +75,33 @@ public class HomeScreenController implements Initializable{
     @FXML
     void tblClick(MouseEvent event) {
         selectedItem = tblLoans.getSelectionModel().getSelectedIndex();
+        System.out.println(selectedItem);
     }
 
     @FXML
     void btnDevolution(ActionEvent event) {
-        loan = tblLoans.getItems().get(selectedItem);
+        if(selectedItem != -1){
+            loan = tblLoans.getItems().get(selectedItem);
 
-        sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+            sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
 
-        sqlConnection.updateLoan("Id", loan.getid(), "status", false);
-        sqlConnection.updateLoan("Id", loan.getid(), "devolutionDate", new Date(new java.util.Date().getTime()));
-        sqlConnection.close();
-        btnSearch(event);
+            try{
+                sqlConnection.updateLoan("Id", loan.getid(), "status", false);
+                sqlConnection.updateLoan("Id", loan.getid(), "devolutionDate", new Date(new java.util.Date().getTime()));
+                resultComponents = sqlConnection.getComponent("component", loan.getComponent());
+                System.out.println(loan.getQuantity());
+                while(resultComponents.next()){
+                    sqlConnection.updateComponent("Id", resultComponents.getInt("Id"), "qtdAvailable", resultComponents.getInt("qtdAvailable") + loan.getQuantity());
+                    sqlConnection.updateComponent("Id", resultComponents.getInt("Id"), "qtdUnavailable", resultComponents.getInt("qtdUnavailable") - loan.getQuantity());
+
+                }
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            sqlConnection.close();
+            btnSearch(event);
+        }
     }
 
     @FXML
