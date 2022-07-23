@@ -26,7 +26,7 @@ public class NewComponentController {
     @FXML
     void btnAddComponent(ActionEvent event) {
         if(!txtComponent.getText().equals("") && !txtQtd.getText().equals("")){
-            sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+            sqlConnection = new SQLConnection();
 
             sqlConnection.insertComponent(txtComponent.getText(), Integer.parseInt(txtQtd.getText()), 0);
             

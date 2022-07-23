@@ -90,7 +90,7 @@ public class NewLoanController implements Initializable{
     @FXML
     void btnMakeLoan(ActionEvent event) {
         if(!listLoanComponents.isEmpty() && !txtName.getText().equals("")){
-            sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+            sqlConnection = new SQLConnection();
 
             for(int c = 0; c<listLoanComponents.size(); c++){
                 try {
@@ -142,7 +142,7 @@ public class NewLoanController implements Initializable{
 
     @FXML
     void btnSearch(ActionEvent event) {
-        sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+        sqlConnection = new SQLConnection();
         
         result = sqlConnection.getComponent();
         listComponents.clear();
@@ -174,7 +174,7 @@ public class NewLoanController implements Initializable{
         tblColumnLoanQtd.setCellValueFactory(new PropertyValueFactory<Component, Integer>("qtdAvailable"));
 
 
-        sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+        sqlConnection = new SQLConnection();
         
         result = sqlConnection.getComponent();
 

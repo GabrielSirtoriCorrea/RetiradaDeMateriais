@@ -74,7 +74,7 @@ public class ComponentsController implements Initializable{
 
     @FXML
     void btnSearch(ActionEvent event) {
-        sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+        sqlConnection = new SQLConnection();
         
         result = sqlConnection.getComponent();
         listComponents.clear();
@@ -103,7 +103,7 @@ public class ComponentsController implements Initializable{
         tblColumnAvailable.setCellValueFactory(new PropertyValueFactory<Component, Integer>("qtdAvailable"));
         tblColumnUnavailable.setCellValueFactory(new PropertyValueFactory<Component, Integer>("qtdUnavailable"));
 
-        sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+        sqlConnection = new SQLConnection();
         
         result = sqlConnection.getComponent();
 
