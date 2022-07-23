@@ -81,7 +81,7 @@ public class HistoryController implements Initializable{
 
     @FXML
     void btnSearch(ActionEvent event) {
-        sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+        sqlConnection = new SQLConnection();
         
         resultLoans = sqlConnection.getLoan();
         listLoans.clear();
@@ -127,7 +127,7 @@ public class HistoryController implements Initializable{
             tblColumnQtd.setCellValueFactory(new PropertyValueFactory<Loan, Integer>("quantity"));
             tblColumnStatus.setCellValueFactory(new PropertyValueFactory<Loan, String>("status"));
 
-            sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+            sqlConnection = new SQLConnection();
 
             resultLoans = sqlConnection.getLoan();
 

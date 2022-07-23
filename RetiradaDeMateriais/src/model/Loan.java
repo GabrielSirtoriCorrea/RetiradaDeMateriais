@@ -20,7 +20,7 @@ public class Loan {
     public Loan(int id, String name, int componentId, int quantity, Date loanDate, Date devolutionDate,
             boolean status) throws SQLException {
             
-        this.sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db"); 
+        this.sqlConnection = new SQLConnection(); 
         dateFormat = new SimpleDateFormat("dd/MM/yyyy");    
 
         result = sqlConnection.getComponent("Id", componentId);

@@ -83,7 +83,7 @@ public class HomeScreenController implements Initializable{
         if(selectedItem != -1){
             loan = tblLoans.getItems().get(selectedItem);
 
-            sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+            sqlConnection = new SQLConnection();
 
             try{
                 sqlConnection.updateLoan("Id", loan.getid(), "status", false);
@@ -106,7 +106,7 @@ public class HomeScreenController implements Initializable{
 
     @FXML
     void btnSearch(ActionEvent event) {
-        sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+        sqlConnection = new SQLConnection();
         
         resultLoans = sqlConnection.getLoan("status", true);
         listLoans.clear();
@@ -153,7 +153,7 @@ public class HomeScreenController implements Initializable{
             tblColumnQtd.setCellValueFactory(new PropertyValueFactory<Loan, Integer>("quantity"));
             tblColumnStatus.setCellValueFactory(new PropertyValueFactory<Loan, String>("status"));
             
-            sqlConnection = new SQLConnection("src/model/RetiradaDeMateriais.db");
+            sqlConnection = new SQLConnection();
 
             resultLoans = sqlConnection.getLoan("status", true);
 
