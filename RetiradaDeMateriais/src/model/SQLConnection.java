@@ -16,8 +16,8 @@ public class SQLConnection {
     
     public SQLConnection(){
         try {
-            System.out.println(getClass().getResource("/model/RetiradaDeMateriais.db").toString());
-            this.connection = DriverManager.getConnection("jdbc:sqlite:" + getClass().getResource("/model/RetiradaDeMateriais.db").toString());
+            System.out.println(getClass().getResource("RetiradaDeMateriais.db").toString());
+            this.connection = DriverManager.getConnection("jdbc:sqlite:" + getClass().getResource("RetiradaDeMateriais.db").toString());
             this.statement = this.connection.createStatement();
 
             this.statement.execute("CREATE TABLE IF NOT EXISTS Components (Id INTEGER PRIMARY KEY AUTOINCREMENT, component TEXT, qtdAvailable INTEGER, qtdUnavailable INTEGER);");
