@@ -12,7 +12,7 @@
    <children>
       <Button layoutX="40.0" layoutY="50.0" mnemonicParsing="false" onAction="#btnLoan" prefHeight="47.0" prefWidth="205.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="EMPRÉSTIMO" textAlignment="CENTER">
          <font>
-            <Font name="Comic Sans MS" size="20.0" />
+            <Font name="Arial" size="20.0" />
          </font>
       </Button>
       <TextField fx:id="txtSearch" layoutX="46.0" layoutY="239.0" prefHeight="32.0" prefWidth="325.0" promptText="Search..." style="-fx-background-radius: 10; -fx-background-color: #D9D9D9;">
@@ -21,36 +21,36 @@
          </font></TextField>
       <TableView fx:id="tblLoans" layoutX="33.0" layoutY="295.0" onMouseClicked="#tblClick" prefHeight="566.0" prefWidth="653.0" style="-fx-font-size: 16;">
         <columns>
-          <TableColumn fx:id="tblColumnName" prefWidth="146.0" style="-fx-alignment: center;" text="NOME" />
-          <TableColumn fx:id="tblColumnComponent" prefWidth="156.0" style="-fx-alignment: center;" text="COMPONENTE" />
-            <TableColumn fx:id="tblColumnQtd" prefWidth="67.0" style="-fx-alignment: center;" text="QTD." />
+          <TableColumn fx:id="tblColumnName" prefWidth="123.0" style="-fx-alignment: center;" text="NOME" />
+          <TableColumn fx:id="tblColumnComponent" prefWidth="158.0" style="-fx-alignment: center;" text="COMPONENTE" />
+            <TableColumn fx:id="tblColumnQtd" prefWidth="88.0" style="-fx-alignment: center;" text="QTD." />
             <TableColumn fx:id="tblColumnDay" prefWidth="129.0" style="-fx-alignment: center;" text="DIA" />
             <TableColumn fx:id="tblColumnStatus" prefWidth="154.0" style="-fx-alignment: center;" text="STATUS" />
         </columns>
       </TableView>
       <Label alignment="CENTER" layoutX="40.0" layoutY="172.0" prefHeight="40.0" prefWidth="315.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="EMPRÉSTIMOS EM ANDAMENTO" textAlignment="CENTER">
          <font>
-            <Font name="Comic Sans MS" size="17.0" />
+            <Font name="Arial" size="17.0" />
          </font>
       </Label>
       <Button layoutX="379.0" layoutY="235.0" mnemonicParsing="false" onAction="#btnSearch" prefHeight="40.0" prefWidth="68.0" style="-fx-background-color: #000000; -fx-background-radius: 20;" text="SEARCH" textFill="WHITE">
          <font>
-            <Font name="Comic Sans MS Bold" size="12.0" />
+            <Font name="Arial" size="12.0" />
          </font>
       </Button>
       <Button layoutX="258.0" layoutY="50.0" mnemonicParsing="false" onAction="#btnComponents" prefHeight="47.0" prefWidth="205.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="COMPONENTES" textAlignment="CENTER">
          <font>
-            <Font name="Comic Sans MS" size="20.0" />
+            <Font name="Arial" size="20.0" />
          </font>
       </Button>
       <Button layoutX="477.0" layoutY="50.0" mnemonicParsing="false" onAction="#btnHistory" prefHeight="47.0" prefWidth="205.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="HISTÓRICO" textAlignment="CENTER">
          <font>
-            <Font name="Comic Sans MS" size="20.0" />
+            <Font name="Arial" size="20.0" />
          </font>
       </Button>
       <Button layoutX="518.0" layoutY="880.0" mnemonicParsing="false" onAction="#btnDevolution" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="DEVOLVER" textAlignment="CENTER">
          <font>
-            <Font name="Comic Sans MS" size="20.0" />
+            <Font name="Arial" size="20.0" />
          </font>
       </Button>
    </children>

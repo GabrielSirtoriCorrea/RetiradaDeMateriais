@@ -10,7 +10,7 @@
    <children>
       <Button layoutX="40.0" layoutY="50.0" mnemonicParsing="false" onAction="#btnLoan" prefHeight="47.0" prefWidth="205.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="EMPRÉSTIMO" textAlignment="CENTER">
          <font>
-            <Font name="Comic Sans MS" size="20.0" />
+            <Font name="Arial" size="20.0" />
          </font>
       </Button>
       <TextField fx:id="txtComponent" layoutX="118.0" layoutY="212.0" prefHeight="32.0" prefWidth="334.0" style="-fx-background-radius: 10; -fx-background-color: #D9D9D9;">
@@ -19,22 +19,22 @@
          </font></TextField>
       <Button layoutX="258.0" layoutY="50.0" mnemonicParsing="false" onAction="#btnComponents" prefHeight="47.0" prefWidth="205.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="COMPONENTES" textAlignment="CENTER">
          <font>
-            <Font name="Comic Sans MS" size="20.0" />
+            <Font name="Arial" size="20.0" />
          </font>
       </Button>
       <Label alignment="CENTER" layoutX="40.0" layoutY="138.0" prefHeight="40.0" prefWidth="193.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="NOVO COMPONENTE" textAlignment="CENTER">
          <font>
-            <Font name="Comic Sans MS" size="17.0" />
+            <Font name="Arial" size="17.0" />
          </font>
       </Label>
       <Button layoutX="475.0" layoutY="50.0" mnemonicParsing="false" onAction="#btnHistory" prefHeight="47.0" prefWidth="205.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="HISTÓRICO" textAlignment="CENTER">
          <font>
-            <Font name="Comic Sans MS" size="20.0" />
+            <Font name="Arial" size="20.0" />
          </font>
       </Button>
       <Label alignment="CENTER" layoutX="40.0" layoutY="212.0" prefHeight="32.0" prefWidth="69.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="NOME:" textAlignment="CENTER">
          <font>
-            <Font name="Comic Sans MS" size="14.0" />
+            <Font name="Arial" size="14.0" />
          </font>
       </Label>
       <TextField fx:id="txtQtd" layoutX="173.0" layoutY="267.0" prefHeight="32.0" prefWidth="37.0" style="-fx-background-radius: 10; -fx-background-color: #D9D9D9;">
@@ -44,17 +44,17 @@
       </TextField>
       <Label alignment="CENTER" layoutX="39.0" layoutY="267.0" prefHeight="32.0" prefWidth="124.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="QUANTIDADE:" textAlignment="CENTER">
          <font>
-            <Font name="Comic Sans MS" size="14.0" />
+            <Font name="Arial" size="14.0" />
          </font>
       </Label>
       <Button layoutX="505.0" layoutY="369.0" mnemonicParsing="false" onAction="#btnAddComponent" prefHeight="65.0" prefWidth="163.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="ADICIONAR&#10;COMPONENTE" textAlignment="CENTER">
          <font>
-            <Font name="Comic Sans MS" size="16.0" />
+            <Font name="Arial" size="16.0" />
          </font>
       </Button>
       <Button layoutX="54.0" layoutY="369.0" mnemonicParsing="false" onAction="#btnBack" prefHeight="32.0" prefWidth="128.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 30; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0,255), 10, 0.5, 0.0, 0.0);" text="VOLTAR" textAlignment="CENTER">
          <font>
-            <Font name="Comic Sans MS" size="20.0" />
+            <Font name="Arial" size="20.0" />
          </font>
       </Button>
    </children>

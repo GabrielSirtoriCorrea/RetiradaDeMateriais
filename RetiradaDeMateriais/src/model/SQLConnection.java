@@ -16,7 +16,6 @@ public class SQLConnection {
     
     public SQLConnection(){
         try {
-            //System.out.println(getClass().getResource("RetiradaDeMateriais.db").toString());
             this.connection = DriverManager.getConnection("jdbc:sqlite:" + "./RetiradaDeMateriais.db");
             this.statement = this.connection.createStatement();
 
