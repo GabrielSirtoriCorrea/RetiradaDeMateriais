@@ -22,7 +22,7 @@ que ele deve cumprir. Dessa forma, foram definidas as seguintes:
 
 Tendo em mente todas essas funções necessárias, foi idelizado um sistema que consiste em uma **interface** em **Java** executada em um **Raspberry Pi**, conectado a um **display touch HDMI Nextion** e dentro de um **case** feito em MDF. Através do display, o usuário pode interagir com a interface, e realizar empréstimos, devoluções, adicionar componentes, etc. Todos os dados inseridos pelo usuário na interface são armazenados em um **banco de dados SQLite3**, fazendo assim com que os dados não sejam perdidos por uma eventual reinicialização do sistema.
 
-![PROJETO RETIRADA DE MATERIAIS](case/Perspectiva.jpg)
+![PROJETO RETIRADA DE MATERIAIS](./Case/Perspectiva.jpg)
 
 ## Componentes
 
@@ -32,25 +32,25 @@ Tendo essa ideia em mente, foram adquiridos os seguintes componentes:
 
 Microprocessador do projeto, responsável por executar a interface java e armazenar todos os dados necessários.
 
-![Raspberry](planejamento/Componentes/raspberry%20pi.png)
+![Raspberry](./Planejamento/Componentes/raspberry%20pi.png)
 
 ### Display touch HDMI Nextion
 
 Tela do projeto, responsável por mostrar a interface e permitir a interação do usuário.
 
-![Display](planejamento/Componentes/Nextion.jpg)
+![Display](./Planejamento/Componentes/Nextion.jpg)
 
 ## Case
 
 Para criação do case do projeto, foi desenvolvido um projeto no site [maker case](https://pt.makercase.com/) para a criação de um case com abas, para uma melhor fixação. Além, foi utilizado também o Autodesk Fusion 360, para fazer os cortes que seriam necessários para o encaixe do Raspberry Pi.
 
-![case](case/Case%20design.PNG)
+![case](./Case/Case%20design.PNG)
 
 Após isso, cada lado da caixa foi exportado em um arquivo DXF para ser cortado em uma máquina de corte a laser.
 
 Esquema de corte:
 
-![Corte](case/Case%20parts%20design.PNG)
+![Corte](./Case/Case%20parts%20design.PNG)
 
 ## Banco de dados
 
@@ -95,7 +95,7 @@ Foram desenvolvidos 5 janelas que apresentam os seguintes layouts:
 
 A Tela Inicial da interface é responsável por **exibir** os empréstimos **Em andamento**, e permitir com que seja feita uma devolução.
 
-![Tela Inicial](./planejamento/Interface%20Designs/HomeScreen.png)
+![Tela Inicial](./Planejamento/Interface%20Designs/HomeScreen.png)
 
 - Botão - Empréstimo - Abre a janela Novo empréstimo
 - Botão - Componentes - Abre a janela Componentes
@@ -109,7 +109,7 @@ A Tela Inicial da interface é responsável por **exibir** os empréstimos **Em 
 
 A tela Novo Empréstimo é responsável por **inserir** um **novo empréstimo** no banco de dados a partir da seleção de componentes na tabela *componentes* disponíveis por parte do usuário.
 
-![Novo Emprestimo](./planejamento/Interface%20Designs/NewLoan.png)
+![Novo Emprestimo](./Planejamento/Interface%20Designs/NewLoan.png)
 
 - Botão - Empréstimo - Abre a janela Novo empréstimo
 - Botão - Componentes - Abre a janela Componentes
@@ -127,7 +127,7 @@ A tela Novo Empréstimo é responsável por **inserir** um **novo empréstimo** 
 
 A tela Componentes é responsável por mostrar **todos** os **componentes** que estão no banco de dados.
 
-![Componentes](./planejamento/Interface%20Designs/Components.png)
+![Componentes](./Planejamento/Interface%20Designs/Components.png)
 
 - Botão - Empréstimo - Abre a janela Novo empréstimo
 - Botão - Componentes - Abre a janela Componentes
@@ -141,7 +141,7 @@ A tela Componentes é responsável por mostrar **todos** os **componentes** que 
 
 A tela Histórico é responsável por mostrar **todos** os **empréstimos** que já foram realizados, tanto os que estão **Em andamento**, como os **devolvidos**.
 
-![Historico](./planejamento/Interface%20Designs/History.png)
+![Historico](./Planejamento/Interface%20Designs/History.png)
 
 - Botão - Empréstimo - Abre a janela Novo empréstimo
 - Botão - Componentes - Abre a janela Componentes
@@ -154,7 +154,7 @@ A tela Histórico é responsável por mostrar **todos** os **empréstimos** que 
 
 A tela Novo Componente é responsável por **inserir** um **componente** e sua respectiva **quantidade** no banco de dados.
 
-![Novo Componente](./planejamento/Interface%20Designs/NewComponent.png)
+![Novo Componente](./Planejamento/Interface%20Designs/NewComponent.png)
 
 - Botão - Empréstimo - Abre a janela Novo empréstimo
 - Botão - Componentes - Abre a janela Componentes
