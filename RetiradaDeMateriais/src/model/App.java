@@ -26,12 +26,10 @@ public class App extends Application{
     public static void changeScene(URL path, Stage stage){
         try {
             Parent root = FXMLLoader.load(path);
-            //Stage stage = new Stage();
             Scene scene = new Scene(root, 720, 1280); 
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
